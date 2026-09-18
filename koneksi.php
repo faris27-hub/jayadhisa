@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'jayadhisa';
+$host = getenv('DB_HOST') ?: 'localhost';
+$user = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASS') ?: '';
+$database = getenv('DB_NAME') ?: 'jayadhisa';
 
 $koneksi = mysqli_connect($host, $user, $password, $database);
 if (!$koneksi) {
